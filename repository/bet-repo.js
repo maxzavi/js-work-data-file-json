@@ -16,11 +16,6 @@ export const usersAll = ()=>{
                     sumGoles1:gol1
                 });                
             }
-            /*
-            users.push ({
-                userName:bet.Participante,
-                sumGoles1:gol1
-            });*/
             userName=bet.Participante;
             gol1=0;
         }

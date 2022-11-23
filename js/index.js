@@ -7,20 +7,22 @@ document.getElementById('btn-find').addEventListener("click" ,evt=>{
 });
 
 //Load table
+const loadTable = ()=>{
+    const users = usersAll();
+    let content ='';
+    let id=0;
+    users.forEach(user=>{
+        content+=`
+            <tr>
+                <td>${id+=1}</td>
+                <td>${user.userName}</td>
+                <td>${user.sumGoles1}</td>
+            </tr>`;
+    });
+    const tableId=document.getElementById('tbl-users');
+    const tBody = tableId.getElementsByTagName('tbody')[0].innerHTML=content;    
+};
 
-const users = usersAll();
-
-let content ='';
-let id=0;
-users.forEach(user=>{
-    content+=`
-        <tr>
-            <td>${id+=1}</td>
-            <td>${user.userName}</td>
-            <td>${user.sumGoles1}</td>
-        </tr>`;
-});
-const tableId=document.getElementById('tbl-users');
-const tBody = tableId.getElementsByTagName('tbody')[0].innerHTML=content;
+loadTable();
 
 //console.log(tBody)
